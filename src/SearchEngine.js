@@ -12,6 +12,7 @@ export default function SearchEngine() {
     function showWeather(response) {
       setLoaded(true);
       setWeather({
+        city: response.data.name,
         temperature: Math.round(response.data.main.temp),
         description: response.data.weather[0].description,
         humidity: response.data.main.humidity,
@@ -40,6 +41,7 @@ export default function SearchEngine() {
       <div className="City">
         {form}
         <ul>
+          <li>Location: {weather.city}</li>
           <li>Temperature: {weather.temperature}°C</li>
           <li>Description: {weather.description}</li>
           <li>Humidity: {weather.humidity}%</li>
