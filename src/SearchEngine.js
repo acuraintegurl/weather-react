@@ -35,6 +35,9 @@ export default function SearchEngine() {
       <input type="submit" value="search" />
     </form>
   );
+  let github = (
+    <a href="https://github.com/acuraintegurl/weather-react">Github</a>
+  );
 
   if (loaded) {
     return (
@@ -53,6 +56,11 @@ export default function SearchEngine() {
       </div>
     );
   } else {
-    return form;
+    return (
+      <div>
+        {form}
+        {github}
+      </div>
+    );
   }
 }
